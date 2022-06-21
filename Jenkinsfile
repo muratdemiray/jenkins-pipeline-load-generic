@@ -15,6 +15,9 @@ node {
         }
     }
     
-    // load Jenkinsfile Pipeline file from devops repository     
-    load 'devops/project_A/full-pipeline.Jenkinsfile'  
+    // pass the environment variables to new pipeline
+    withEnv(["COMMIT=${scmVars.GIT_COMMIT}","BRANCH=${scmVars.GIT_BRANCH}"]) {    
+        // load Jenkinsfile Pipeline file from devops repository     
+        load 'devops/project_A/full-pipeline.Jenkinsfile'  
+    }
 } 
