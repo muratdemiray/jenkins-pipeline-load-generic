@@ -3,7 +3,7 @@
 node {    
     //checkout main project files
     // need to manually checkout in scripted pipeline (differs from declarative pipeline which checkouts by default)
-    smvVars = checkout scm
+    scmVars = checkout scm
 
     //checkout devops repository (other repository)
     sh 'mkdir -p devops'
